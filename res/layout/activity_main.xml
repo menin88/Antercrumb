@@ -54,7 +54,6 @@
             android:layout_below="@+id/etEmailLogin"
             android:hint="@string/enter_password"
             android:inputType="textPassword"
-            android:text="oblivion"
             android:textColor="@color/ebony"
             android:textColorHint="@color/hint_color" />
 
@@ -67,7 +66,6 @@
             android:layout_marginTop="@dimen/login_spacing"
             android:hint="@string/enter_email"
             android:inputType="textEmailAddress"
-            android:text="menin88@gmail.com"
             android:textColor="@color/ebony"
             android:textColorHint="@color/hint_color" />
 
