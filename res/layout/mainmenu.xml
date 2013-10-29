@@ -4,8 +4,10 @@
     android:layout_height="fill_parent" >
 
     <ImageView
+        android:id="@+id/imageBackground"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:contentDescription="background_image"
         android:src="@drawable/grass" />
 
     <LinearLayout
