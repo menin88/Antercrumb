@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 //papparappa!!!
+//papparappa2 evvai???!
 public class GameMenuActivity extends Activity {
 
 	private static final String PREFS_NAME = "MY_PREFERENCES";
