@@ -25,6 +25,7 @@ public class GameMenuActivity extends Activity {
 	private static final String PREFS_NAME = "MY_PREFERENCES";
 	private Client mKinveyClient;
 	private boolean[] settingsHolder = new boolean[4];
+	private TextView profileBtn;
 	private TextView wellcome;
 	private TextView logOutButton;
 	private TextView scoreBtn;
@@ -39,6 +40,8 @@ public class GameMenuActivity extends Activity {
 
 		mKinveyClient = new Client.Builder(this.getApplicationContext())
 				.build();
+		
+		profileBtn = (TextView) findViewById(R.id.profile);
 		logOutButton = (TextView) findViewById(R.id.exit);
 		scoreBtn = (TextView) findViewById(R.id.scoreMenu);
 		wellcome = (TextView) findViewById(R.id.userEmail);
@@ -71,6 +74,15 @@ public class GameMenuActivity extends Activity {
 		 * case R.id.graphics: editor.putBoolean("graphics",
 		 * !settingsHolder[3]); break;
 		 */
+			
+		case R.id.profile:
+			Toast.makeText(this, "Profile button pressed", Toast.LENGTH_SHORT).show();
+			Intent profileIntent = new Intent(GameMenuActivity.this,ProfileActivity.class);
+			GameMenuActivity.this.startActivity(profileIntent);
+			GameMenuActivity.this.finish();
+			break;
+		
+			
 		case R.id.exit:
 			String text = "";
 			mKinveyClient.user().logout().execute();
@@ -122,6 +134,8 @@ public class GameMenuActivity extends Activity {
 	public void setText() {
 		Typeface tf = Typeface.createFromAsset(getAssets(),
 				"data/fonts/font1.ttf");// font3 NO!!
+		
+		TextView profile = (TextView) findViewById(R.id.profile);
 		TextView start = (TextView) findViewById(R.id.start);
 		TextView score = (TextView) findViewById(R.id.scoreMenu);
 		TextView exit = (TextView) findViewById(R.id.exit);

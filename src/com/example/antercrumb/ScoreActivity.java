@@ -44,6 +44,7 @@ public class ScoreActivity extends Activity {
 	private ListView listView;
 	private SimpleAdapter adapter;
 	Button btn ;
+	Button profileBtn;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class ScoreActivity extends Activity {
 		//listView =(ListView)findViewById(R.id.listview);
 		
 		btn = (Button)findViewById(R.id.btnBackToMainMenu);
+		profileBtn = (Button)findViewById(R.id.profile);
 		mKinveyClient = new Client.Builder(this.getApplicationContext())
 				.build();
 		// Receive score from gameActivity then check general score
