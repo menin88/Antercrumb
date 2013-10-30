@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//visto! ste
 //mandami un messaggio se riesci a prendere questo commit Chai
 //papparappa ste
 //papparappa!!!
