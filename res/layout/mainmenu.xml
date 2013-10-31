@@ -15,6 +15,12 @@
         android:layout_height="fill_parent"
         android:layout_margin="10dp"
         android:orientation="vertical" >
+         <Button android:id="@+id/profile"
+            android:layout_height="50dp"
+            android:layout_width="fill_parent"
+            android:layout_gravity="center"
+            android:text="Profile"
+            />
 
         <TextView android:id="@+id/userEmail"
             android:layout_height="50dp"

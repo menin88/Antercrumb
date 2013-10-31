@@ -68,7 +68,7 @@ public class GameMenuActivity extends Activity {
 					ScoreActivity.class);
 			//GameMenuActivity.this.startActivityForResult(scoreIntent, 1);
 			GameMenuActivity.this.startActivity(scoreIntent);
-			GameMenuActivity.this.finish();
+			//GameMenuActivity.this.finish();
 			break;
 		/*
 		 * case R.id.graphics: editor.putBoolean("graphics",
@@ -79,7 +79,7 @@ public class GameMenuActivity extends Activity {
 			Toast.makeText(this, "Profile button pressed", Toast.LENGTH_SHORT).show();
 			Intent profileIntent = new Intent(GameMenuActivity.this,ProfileActivity.class);
 			GameMenuActivity.this.startActivity(profileIntent);
-			GameMenuActivity.this.finish();
+			//GameMenuActivity.this.finish();
 			break;
 		
 			
