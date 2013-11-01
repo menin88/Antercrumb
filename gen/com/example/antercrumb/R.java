@@ -46,6 +46,7 @@ public final class R {
         public static final int btnBackToMainMenu=0x7f08000f;
         public static final int btnLogin=0x7f080002;
         public static final int btnRegisterAccount=0x7f080003;
+        public static final int btnToProfile=0x7f08000a;
         public static final int etEmailLogin=0x7f080004;
         public static final int etPassword=0x7f080001;
         public static final int exit=0x7f08000e;
@@ -53,7 +54,6 @@ public final class R {
         public static final int imageBackground=0x7f080009;
         public static final int loadingPanel=0x7f080005;
         public static final int name=0x7f080007;
-        public static final int profile=0x7f08000a;
         public static final int scoreMenu=0x7f08000d;
         public static final int scorepoint=0x7f080008;
         public static final int start=0x7f08000c;
@@ -89,6 +89,7 @@ public final class R {
         public static final int ok=0x7f060011;
         public static final int register=0x7f060009;
         public static final int title_activity_main=0x7f06000c;
+        public static final int user_profile=0x7f060014;
         public static final int welcome=0x7f06000d;
     }
     public static final class style {

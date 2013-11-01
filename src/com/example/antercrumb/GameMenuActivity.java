@@ -12,6 +12,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,27 +26,36 @@ public class GameMenuActivity extends Activity {
 	private static final String PREFS_NAME = "MY_PREFERENCES";
 	private Client mKinveyClient;
 	private boolean[] settingsHolder = new boolean[4];
+	
+
+	
 	private TextView profileBtn;
 	private TextView wellcome;
 	private TextView logOutButton;
 	private TextView scoreBtn;
 	private String dataArray;
+	
+	private Button btn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mainmenu);
 
+		btn = (Button)findViewById(R.id.btnToProfile);
+
+		
 		// setText();
 
 		mKinveyClient = new Client.Builder(this.getApplicationContext())
 				.build();
 		
-		profileBtn = (TextView) findViewById(R.id.profile);
+		profileBtn = (TextView) findViewById(R.id.profile);		??
 		logOutButton = (TextView) findViewById(R.id.exit);
 		scoreBtn = (TextView) findViewById(R.id.scoreMenu);
 		wellcome = (TextView) findViewById(R.id.userEmail);
-		
+
+		/*
 		if(getIntent().getIntExtra(Utils.COME_FROM, 0) == 0 ){
 		dataArray = getIntent().getStringExtra(Utils.USERDATA);
 
@@ -53,7 +63,9 @@ public class GameMenuActivity extends Activity {
 		}
 		else if (getIntent().getIntExtra(Utils.COME_FROM, 0) == 1){
 			wellcome.setText("vengo da score");
-		}
+		} 
+		*/
+
 	}
 
 	public void onClick(View v) {
@@ -61,7 +73,17 @@ public class GameMenuActivity extends Activity {
 		switch (v.getId()) {
 		case R.id.start:
 			break;
-
+			
+	
+		case R.id.btnToProfile:
+			Toast.makeText(this, "Profile button pressed", Toast.LENGTH_SHORT).show();
+			
+			Intent profileIntent = new Intent(GameMenuActivity.this, ProfileActivity.class);
+			GameMenuActivity.this.startActivity(profileIntent);
+			//GameMenuActivity.this.finish();
+			break;
+		
+	
 		case R.id.scoreMenu:
 			Toast.makeText(this, "Score button pressed", Toast.LENGTH_SHORT).show();
 			Intent scoreIntent = new Intent(GameMenuActivity.this,
@@ -75,12 +97,7 @@ public class GameMenuActivity extends Activity {
 		 * !settingsHolder[3]); break;
 		 */
 			
-		case R.id.profile:
-			Toast.makeText(this, "Profile button pressed", Toast.LENGTH_SHORT).show();
-			Intent profileIntent = new Intent(GameMenuActivity.this,ProfileActivity.class);
-			GameMenuActivity.this.startActivity(profileIntent);
-			//GameMenuActivity.this.finish();
-			break;
+
 		
 			
 		case R.id.exit:
@@ -139,6 +156,7 @@ public class GameMenuActivity extends Activity {
 		TextView start = (TextView) findViewById(R.id.start);
 		TextView score = (TextView) findViewById(R.id.scoreMenu);
 		TextView exit = (TextView) findViewById(R.id.exit);
+	//	profile.setTypeface(tf);
 		start.setTypeface(tf);
 		exit.setTypeface(tf);
 		score.setTypeface(tf);

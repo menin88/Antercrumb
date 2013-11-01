@@ -42,6 +42,12 @@
             android:label="@string/game_score" >
             >
         </activity>
+        
+        <activity
+            android:name="com.example.antercrumb.ProfileActivity"
+            android:label="@string/user_profile" >
+            >
+        </activity>
 
     </application>
 

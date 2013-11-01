@@ -23,6 +23,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
@@ -43,8 +44,7 @@ public class ScoreActivity extends Activity {
 	
 	private ListView listView;
 	private SimpleAdapter adapter;
-	Button btn ;
-	Button profileBtn;
+	private Button btn ;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,6 @@ public class ScoreActivity extends Activity {
 		//listView =(ListView)findViewById(R.id.listview);
 		
 		btn = (Button)findViewById(R.id.btnBackToMainMenu);
-		profileBtn = (Button)findViewById(R.id.profile);
 		mKinveyClient = new Client.Builder(this.getApplicationContext())
 				.build();
 		// Receive score from gameActivity then check general score
@@ -76,6 +75,8 @@ public class ScoreActivity extends Activity {
 		//Otherwise, skip saveScore and just call showScore
 		//getScores();
 		//showScore();
+		
+
 	}
 
 	public void onClick(View v){
@@ -86,7 +87,7 @@ public class ScoreActivity extends Activity {
 			
 			Intent in = new Intent(ScoreActivity.this, GameMenuActivity.class);	
 			in.putExtra(Utils.COME_FROM, 1);
-			ScoreActivity.this.startActivity(in);
+		//	ScoreActivity.this.startActivity(in);
 			ScoreActivity.this.finish();
 			break;
 		default: break;
@@ -98,7 +99,7 @@ public class ScoreActivity extends Activity {
 	    if(keyCode == KeyEvent.KEYCODE_BACK) {
 	    	Intent in = new Intent(ScoreActivity.this, GameMenuActivity.class);	
 	    	in.putExtra(Utils.COME_FROM, 1);
-			ScoreActivity.this.startActivity(in);
+		//	ScoreActivity.this.startActivity(in);
 			ScoreActivity.this.finish();
 			//OSSERVAZIONE IMPORTNTE!
 			//Se non chiamo la finish dell'Activity, questa rimane nello Stack delle Activity
@@ -108,13 +109,14 @@ public class ScoreActivity extends Activity {
 			//E' buona norma quindi che con il pulsante back si ritorni all'activity
 			//precedente CHIUDENDO con finish() l' Activity.
 			//
-	    	return true;
+	    	return true; 
 	    }
 	    else {
 	        return super.onKeyDown(keyCode, event);
 	    }
 
 	}
+	
 
 	public void saveScore() {
 		if (scoreAppData != null) {

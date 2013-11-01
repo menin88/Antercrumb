@@ -7,18 +7,18 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
-   
+
     <TextView
-            android:id="@+id/tvErrorMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/etPassword"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/login_spacing"
-            android:clickable="true"
-            android:text=""
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/kinvey_orange" />
+        android:id="@+id/tvErrorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/login_spacing"
+        android:clickable="true"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/kinvey_orange" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -47,37 +47,40 @@
         android:textColor="@color/ghost_white" />
 
     <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/etEmailLogin"
-            android:layout_below="@+id/etEmailLogin"
-            android:hint="@string/enter_password"
-            android:inputType="textPassword"
-            android:textColor="@color/ebony"
-            android:textColorHint="@color/hint_color" />
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etEmailLogin"
+        android:layout_below="@+id/etEmailLogin"
+        android:hint="@string/enter_password"
+        android:inputType="textPassword"
+        android:textColor="@color/ebony"
+        android:textColorHint="@color/hint_color" />
 
     <EditText
-            android:id="@+id/etEmailLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/login_spacing"
-            android:hint="@string/enter_email"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/ebony"
-            android:textColorHint="@color/hint_color" />
+        android:id="@+id/etEmailLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/login_spacing"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/ebony"
+        android:textColorHint="@color/hint_color" />
 
-     <!--  <ProgressBar
+    <!--
+           <ProgressBar
          android:id="@+id/progress_bar"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          style="@android:style/Widget.ProgressBar.Small"
-         android:layout_marginRight="5dp" />-->
-    
-    
-    <!--<ImageButton
+         android:layout_marginRight="5dp" />
+    -->
+
+
+    <!--
+        <ImageButton
         android:id="@+id/btnLoginFacebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -86,13 +89,15 @@
         android:layout_marginTop="50dp"
         android:contentDescription="@string/login_facebook"
         android:onClick="launchFacebookLogin"
-        android:src="@drawable/sign_in_facebook" />-->
-	<RelativeLayout
-    style="@style/GenericProgressBackground"
-    android:id="@+id/loadingPanel"
-    android:visibility="invisible"
-    >
-    <ProgressBar
-        style="@style/GenericProgressIndicator"/>
-</RelativeLayout>
+        android:src="@drawable/sign_in_facebook" />
+    -->
+
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
+        style="@style/GenericProgressBackground"
+        android:visibility="invisible" >
+
+        <ProgressBar style="@style/GenericProgressIndicator" />
+    </RelativeLayout>
+
 </RelativeLayout>

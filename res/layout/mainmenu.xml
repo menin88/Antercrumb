@@ -15,34 +15,38 @@
         android:layout_height="fill_parent"
         android:layout_margin="10dp"
         android:orientation="vertical" >
-         <Button android:id="@+id/profile"
-            android:layout_height="50dp"
-            android:layout_width="fill_parent"
-            android:layout_gravity="center"
-            android:text="Profile"
-            />
 
-        <TextView android:id="@+id/userEmail"
-            android:layout_height="50dp"
+        <Button
+            android:id="@+id/btnToProfile"
             android:layout_width="fill_parent"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text=""/>
+            android:onClick="Profile"
+            android:text="Profile" />
+
+        <TextView
+            android:id="@+id/userEmail"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="" />
 
         <TextView
             android:id="@+id/start"
             style="@style/MenuFont"
-            android:onClick="onClick"
             android:layout_gravity="right"
+            android:onClick="onClick"
             android:text="START GAME"
             android:typeface="serif" />
 
-         <TextView
+        <TextView
             android:id="@+id/scoreMenu"
             style="@style/MenuFont"
             android:onClick="onClick"
             android:text="Score" />
 
-       <!--<TextView
+        <!--
+        <TextView
             android:id="@+id/settings"
             style="@style/MenuFont"
             android:text="SETTINGS" />
@@ -50,12 +54,14 @@
         <TextView
             android:id="@+id/about"
             style="@style/MenuFont"
-            android:text="ABOUT" />-->
+            android:text="ABOUT" />
+
+        -->
 
         <TextView
             android:id="@+id/exit"
-            android:onClick="onClick"
             style="@style/MenuFont"
+            android:onClick="onClick"
             android:text="EXIT" />
     </LinearLayout>
 
