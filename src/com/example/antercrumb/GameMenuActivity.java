@@ -76,14 +76,6 @@ public class GameMenuActivity extends Activity {
 			// GameMenuActivity.this.finish();
 			break;
 
-		case R.id.playTheGame:
-			Toast.makeText(this, "PLAY button pressed", Toast.LENGTH_SHORT)
-					.show();
-			Intent playIntent = new Intent(GameMenuActivity.this,
-					GameActivity.class);
-			GameMenuActivity.this.startActivity(playIntent);
-
-			break;
 
 		case R.id.scoreMenu:
 			Toast.makeText(this, "Score button pressed", Toast.LENGTH_SHORT)
