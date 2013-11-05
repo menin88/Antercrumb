@@ -21,8 +21,13 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="Back">back</string>
-    <string name="user_profile">Profile</string>
-    
-    
+    <string name="button_profile">Profile</string>
+    <string name="game_start">PLAY</string>
+    <string name="title_activity_game">GameActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="scores">Scores</string>
+    <string name="settings">Settings</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 
 </resources>

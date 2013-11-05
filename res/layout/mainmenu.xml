@@ -18,44 +18,34 @@
 
         <Button
             android:id="@+id/btnToProfile"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:onClick="Profile"
-            android:text="Profile" />
-
-        <TextView
-            android:id="@+id/userEmail"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/start"
-            style="@style/MenuFont"
-            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:onClick="onClick"
-            android:text="START GAME"
+            android:text="@string/button_profile" />
+
+        <TextView
+            android:id="@+id/playTheGame"
+            style="@style/MenuFont"
+            android:onClick="onClick"
+            android:text="@string/game_start"
             android:typeface="serif" />
 
         <TextView
             android:id="@+id/scoreMenu"
             style="@style/MenuFont"
             android:onClick="onClick"
-            android:text="Score" />
+            android:text="@string/scores" />
 
-        <!--
         <TextView
             android:id="@+id/settings"
             style="@style/MenuFont"
-            android:text="SETTINGS" />
-
+            android:onClick="onClick"
+            android:text="@string/settings" />
+        <!--
         <TextView
             android:id="@+id/about"
             style="@style/MenuFont"
-            android:text="ABOUT" />
-
+            android:text="ABOUT" />
         -->
 
         <TextView

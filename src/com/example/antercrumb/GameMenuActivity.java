@@ -16,21 +16,23 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+//visto! ste
+//mandami un messaggio se riesci a prendere questo commit Chai
+//papparappa ste
+//papparappa!!!
+//papparappa2 evvai???!
 public class GameMenuActivity extends Activity {
 
 	private static final String PREFS_NAME = "MY_PREFERENCES";
 	private Client mKinveyClient;
 	private boolean[] settingsHolder = new boolean[4];
-	
 
-	
 	private TextView profileBtn;
 	private TextView wellcome;
 	private TextView logOutButton;
 	private TextView scoreBtn;
 	private String dataArray;
-	
+
 	private Button btn;
 
 	@Override
@@ -38,64 +40,74 @@ public class GameMenuActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mainmenu);
 
-		btn = (Button)findViewById(R.id.btnToProfile);
+		btn = (Button) findViewById(R.id.btnToProfile);
 
-		
 		// setText();
 
 		mKinveyClient = new Client.Builder(this.getApplicationContext())
 				.build();
-		
-		profileBtn = (TextView) findViewById(R.id.btnToProfile);		
+
+		// profileBtn = (TextView) findViewById(R.id.profile); ??
 		logOutButton = (TextView) findViewById(R.id.exit);
 		scoreBtn = (TextView) findViewById(R.id.scoreMenu);
-		wellcome = (TextView) findViewById(R.id.userEmail);
 
 		/*
-		if(getIntent().getIntExtra(Utils.COME_FROM, 0) == 0 ){
-		dataArray = getIntent().getStringExtra(Utils.USERDATA);
-
-		wellcome.setText(dataArray);
-		}
-		else if (getIntent().getIntExtra(Utils.COME_FROM, 0) == 1){
-			wellcome.setText("vengo da score");
-		} 
-		*/
+		 * if(getIntent().getIntExtra(Utils.COME_FROM, 0) == 0 ){ dataArray =
+		 * getIntent().getStringExtra(Utils.USERDATA);
+		 * 
+		 * wellcome.setText(dataArray); } else if
+		 * (getIntent().getIntExtra(Utils.COME_FROM, 0) == 1){
+		 * wellcome.setText("vengo da score"); }
+		 */
 
 	}
 
 	public void onClick(View v) {
 
 		switch (v.getId()) {
-		case R.id.start:
-			break;
-			
-	
+
 		case R.id.btnToProfile:
-			Toast.makeText(this, "Profile button pressed", Toast.LENGTH_SHORT).show();
-			
-			Intent profileIntent = new Intent(GameMenuActivity.this, ProfileActivity.class);
+			Toast.makeText(this, "Profile button pressed", Toast.LENGTH_SHORT)
+					.show();
+
+			Intent profileIntent = new Intent(GameMenuActivity.this,
+					ProfileActivity.class);
 			GameMenuActivity.this.startActivity(profileIntent);
-			//GameMenuActivity.this.finish();
+			// GameMenuActivity.this.finish();
 			break;
-		
-	
+
+		case R.id.playTheGame:
+			Toast.makeText(this, "PLAY button pressed", Toast.LENGTH_SHORT)
+					.show();
+			Intent playIntent = new Intent(GameMenuActivity.this,
+					GameActivity.class);
+			GameMenuActivity.this.startActivity(playIntent);
+
+			break;
+
 		case R.id.scoreMenu:
-			Toast.makeText(this, "Score button pressed", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "Score button pressed", Toast.LENGTH_SHORT)
+					.show();
 			Intent scoreIntent = new Intent(GameMenuActivity.this,
 					ScoreActivity.class);
-			//GameMenuActivity.this.startActivityForResult(scoreIntent, 1);
+			// GameMenuActivity.this.startActivityForResult(scoreIntent, 1);
 			GameMenuActivity.this.startActivity(scoreIntent);
-			//GameMenuActivity.this.finish();
+			// GameMenuActivity.this.finish();
 			break;
 		/*
 		 * case R.id.graphics: editor.putBoolean("graphics",
 		 * !settingsHolder[3]); break;
 		 */
-			
 
-		
-			
+		case R.id.settings:
+			Toast.makeText(this, "Settings button pressed", Toast.LENGTH_SHORT)
+					.show();
+			Intent settingsIntent = new Intent(GameMenuActivity.this,
+					SettingsActivity.class);
+			GameMenuActivity.this.startActivity(settingsIntent);
+
+			break;
+
 		case R.id.exit:
 			String text = "";
 			mKinveyClient.user().logout().execute();
@@ -117,15 +129,15 @@ public class GameMenuActivity extends Activity {
 		}
 
 	}
-	public void onStart(){
+
+	public void onStart() {
 		super.onStart();
 	}
-	
-	public void onRestart(){
+
+	public void onRestart() {
 		super.onRestart();
-		
+
 	}
-	
 
 	/*
 	 * @Override public void onClick(View v) { SharedPreferences settings =
@@ -147,12 +159,12 @@ public class GameMenuActivity extends Activity {
 	public void setText() {
 		Typeface tf = Typeface.createFromAsset(getAssets(),
 				"data/fonts/font1.ttf");// font3 NO!!
-		
-		
-		TextView start = (TextView) findViewById(R.id.start);
+
+		// TextView profile = (TextView) findViewById(R.id.profile);
+		TextView start = (TextView) findViewById(R.id.playTheGame);
 		TextView score = (TextView) findViewById(R.id.scoreMenu);
 		TextView exit = (TextView) findViewById(R.id.exit);
-	//	profile.setTypeface(tf);
+		// profile.setTypeface(tf);
 		start.setTypeface(tf);
 		exit.setTypeface(tf);
 		score.setTypeface(tf);
@@ -176,6 +188,5 @@ public class GameMenuActivity extends Activity {
 	public void onPause() {
 		super.onPause();
 	}
-	
 
 }

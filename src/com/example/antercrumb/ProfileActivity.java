@@ -20,6 +20,7 @@ public class ProfileActivity extends Activity{
 		setContentView(R.layout.profile);
 		
 		
+		
 
 	}
 	
