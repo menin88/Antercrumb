@@ -16,11 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//visto! ste
-//mandami un messaggio se riesci a prendere questo commit Chai
-//papparappa ste
-//papparappa!!!
-//papparappa2 evvai???!
+
 public class GameMenuActivity extends Activity {
 
 	private static final String PREFS_NAME = "MY_PREFERENCES";
