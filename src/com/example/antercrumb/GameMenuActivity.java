@@ -50,7 +50,7 @@ public class GameMenuActivity extends Activity {
 		mKinveyClient = new Client.Builder(this.getApplicationContext())
 				.build();
 		
-		profileBtn = (TextView) findViewById(R.id.profile);		??
+		profileBtn = (TextView) findViewById(R.id.btnToProfile);		
 		logOutButton = (TextView) findViewById(R.id.exit);
 		scoreBtn = (TextView) findViewById(R.id.scoreMenu);
 		wellcome = (TextView) findViewById(R.id.userEmail);
@@ -152,7 +152,7 @@ public class GameMenuActivity extends Activity {
 		Typeface tf = Typeface.createFromAsset(getAssets(),
 				"data/fonts/font1.ttf");// font3 NO!!
 		
-		TextView profile = (TextView) findViewById(R.id.profile);
+		
 		TextView start = (TextView) findViewById(R.id.start);
 		TextView score = (TextView) findViewById(R.id.scoreMenu);
 		TextView exit = (TextView) findViewById(R.id.exit);
