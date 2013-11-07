@@ -20,7 +20,7 @@
     <string name="game_score">Scores</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
-    <string name="Back">back</string>
+    <string name="Back">BACK</string>
     <string name="button_profile">Profile</string>
     <string name="game_start">PLAY</string>
     <string name="title_activity_game">GameActivity</string>
@@ -29,5 +29,9 @@
     <string name="scores">Scores</string>
     <string name="settings">Settings</string>
     <string name="title_activity_settings">SettingsActivity</string>
-
+    <string name="change_username">Change Username</string>
+    <string name="profile_settings">PROFILE </string>
+    <string name="game_settings">GAME </string>
+    
+        
 </resources>

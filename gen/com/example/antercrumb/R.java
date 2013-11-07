@@ -53,38 +53,43 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int sign_in_facebook=0x7f020005;
     }
     public static final class id {
-        public static final int btnBackToMainMenu=0x7f080014;
+        public static final int backToSettings=0x7f08000d;
+        public static final int btnBackToMainMenu=0x7f080018;
         public static final int btnLogin=0x7f080005;
         public static final int btnRegisterAccount=0x7f080006;
-        public static final int btnToProfile=0x7f08000d;
-        public static final int defaultProfilePicture=0x7f080012;
+        public static final int btnToProfile=0x7f080011;
+        public static final int changeUsername=0x7f080009;
+        public static final int defaultProfilePicture=0x7f080016;
         public static final int dummy_button=0x7f080002;
         public static final int etEmailLogin=0x7f080007;
         public static final int etPassword=0x7f080004;
-        public static final int exit=0x7f080011;
+        public static final int exit=0x7f080015;
         public static final int fullscreen_content=0x7f080000;
         public static final int fullscreen_content_controls=0x7f080001;
-        public static final int icon=0x7f080009;
-        public static final int imageBackground=0x7f08000c;
+        public static final int gameSettings=0x7f08000c;
+        public static final int icon=0x7f08000e;
+        public static final int imageBackground=0x7f08000a;
         public static final int loadingPanel=0x7f080008;
-        public static final int name=0x7f08000a;
-        public static final int playTheGame=0x7f08000e;
-        public static final int scoreMenu=0x7f08000f;
-        public static final int scorepoint=0x7f08000b;
-        public static final int settings=0x7f080010;
+        public static final int name=0x7f08000f;
+        public static final int playTheGame=0x7f080012;
+        public static final int profileSettings=0x7f08000b;
+        public static final int scoreMenu=0x7f080013;
+        public static final int scorepoint=0x7f080010;
+        public static final int settings=0x7f080014;
         public static final int tvErrorMessage=0x7f080003;
-        public static final int txtHeader=0x7f080015;
-        public static final int username=0x7f080013;
+        public static final int txtHeader=0x7f080019;
+        public static final int username=0x7f080017;
     }
     public static final class layout {
         public static final int activity_game=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int activity_settings=0x7f030002;
-        public static final int elementscore=0x7f030003;
-        public static final int mainmenu=0x7f030004;
-        public static final int profile=0x7f030005;
-        public static final int score=0x7f030006;
-        public static final int score_view_header=0x7f030007;
+        public static final int activity_profile_settings=0x7f030002;
+        public static final int activity_settings=0x7f030003;
+        public static final int elementscore=0x7f030004;
+        public static final int mainmenu=0x7f030005;
+        public static final int profile=0x7f030006;
+        public static final int score=0x7f030007;
+        public static final int score_view_header=0x7f030008;
     }
     public static final class string {
         public static final int Back=0x7f060013;
@@ -92,6 +97,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int app_name=0x7f060000;
         public static final int button_profile=0x7f060014;
         public static final int cancel=0x7f060012;
+        public static final int change_username=0x7f06001c;
         public static final int confirm_password=0x7f060005;
         public static final int dummy_button=0x7f060017;
         public static final int dummy_content=0x7f060018;
@@ -102,12 +108,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int facebook_app_id=0x7f06000e;
         public static final int game_menu=0x7f06000f;
         public static final int game_score=0x7f060010;
+        public static final int game_settings=0x7f06001e;
         public static final int game_start=0x7f060015;
         public static final int hello_world=0x7f060002;
         public static final int login=0x7f060008;
         public static final int login_facebook=0x7f06000a;
         public static final int menu_settings=0x7f06000b;
         public static final int ok=0x7f060011;
+        public static final int profile_settings=0x7f06001d;
         public static final int register=0x7f060009;
         public static final int scores=0x7f060019;
         public static final int settings=0x7f06001a;

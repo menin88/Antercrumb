@@ -242,6 +242,7 @@ public class MainActivity extends Activity {
 						CharSequence text = "Wrong username or password";
 						mErrorMessage.setText("Wrong username or password");
 						loadingLayout.setVisibility(View.INVISIBLE);
+						setAllVisible();
 						// onAuthenticationResult(null);
 					}
 
@@ -282,7 +283,10 @@ public class MainActivity extends Activity {
 							setAllVisible();
 						}
 						public void onSuccess(User u) {
+							int atIndex = findAtPosition(u);
+							String strNoDomain = u.getUsername().substring(0, atIndex -1);
 							mKinveyClient.user().put("email", u.getUsername());
+							mKinveyClient.user().put("username", strNoDomain);
 							mKinveyClient.user().put("imageID", imageID);
 							mKinveyClient.user().update(new KinveyUserCallback() {
 						    @Override
@@ -305,6 +309,16 @@ public class MainActivity extends Activity {
 						    }
 						    });
 							
+						}
+						private int findAtPosition(User u) {
+							int atIndex=0;
+							boolean found = false;
+							for (; atIndex < u.getUsername().length() && !found; atIndex++){
+								if (u.getUsername().charAt(atIndex) == '@'){
+									found=true;
+								}
+							}
+							return atIndex;
 						}
 					});
 		}
