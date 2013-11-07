@@ -11,6 +11,19 @@ public class Player {
 	private int score;
 	private int userID;
 
+	
+	private int profilePicture;
+	private int bestScore;
+	private int record;
+	
+	
+	public void saveOnDevice(){
+		//Save data in local device
+		
+		
+	}
+	
+	
 	public Player() {
 	} // GenericJson classes must have a public empty constructor
 

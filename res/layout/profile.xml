@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-       
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
- 
- 
+    android:layout_height="match_parent"
+    android:focusable="false" >
 
+        <ImageView
+            android:id="@+id/defaultProfilePicture"
+            android:layout_width="114dp"
+            android:layout_height="176dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="31dp"
+            android:layout_marginTop="34dp"
+            android:contentDescription="defaultProfilePicture"
+            android:src="@drawable/defaultpp" />
+
+         <TextView
+             android:id="@+id/username"
+             style="@style/MenuFont"
+             android:layout_width="wrap_content"
+             android:layout_alignLeft="@+id/defaultProfilePicture"
+             android:layout_alignParentTop="true"
+             android:layout_marginTop="17dp"
+             android:text="NOME"
+             android:textColor="@color/black_overlay" />
 
 </RelativeLayout>

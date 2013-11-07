@@ -38,7 +38,8 @@ public class MainActivity extends Activity {
 	private ProgressBar mProgress;
 	private int mProgressStatus = 0;
 	private RelativeLayout loadingLayout;
-
+	private int imageID;
+	
 	protected Button mButtonLogin;
 	protected Button mFacebookLoginButton;
 	protected EditText mEditUserEmail;
@@ -54,6 +55,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		imageID = R.drawable.defaultpp;
+		
 		if (savedInstanceState != null) {
 			mUserEmail = savedInstanceState.getString(Utils.USERMAIL);
 			mPassword = savedInstanceState.getString(Utils.USERPWD);
@@ -259,7 +263,6 @@ public class MainActivity extends Activity {
 	}
 
 	public void userSignup(View view) {
-
 		mUserEmail = mEditUserEmail.getText().toString();
 		mPassword = mEditPassword.getText().toString();
 		if (TextUtils.isEmpty(mUserEmail) || TextUtils.isEmpty(mPassword)
@@ -274,26 +277,34 @@ public class MainActivity extends Activity {
 					new KinveyUserCallback() {
 						public void onFailure(Throwable t) {
 							CharSequence text = "Could not sign up or User already exist";
-
 							mErrorMessage.setText(text);
 							loadingLayout.setVisibility(View.INVISIBLE);
 							setAllVisible();
 						}
-
 						public void onSuccess(User u) {
-							CharSequence text = u.getUsername()
-									+ ", your account has been created.";
-							mErrorMessage.setText(text);
-
-							String userName = u.getUsername();
-
-							Intent in = new Intent(MainActivity.this,
-									GameMenuActivity.class);
-							in.putExtra(Utils.COME_FROM, 0);
-							in.putExtra(Utils.USERDATA, userName);
-							loadingLayout.setVisibility(View.INVISIBLE);
-							MainActivity.this.startActivity(in);
-							MainActivity.this.finish();
+							mKinveyClient.user().put("email", u.getUsername());
+							mKinveyClient.user().put("imageID", imageID);
+							mKinveyClient.user().update(new KinveyUserCallback() {
+						    @Override
+						    public void onFailure(Throwable e) {
+						    	mErrorMessage.setText("Errore nel salvare i dati");
+						    }
+						    @Override
+						    public void onSuccess(User u) {
+						    	CharSequence text = u.getUsername()
+										+ ", your account has been created.";
+								mErrorMessage.setText(text);
+								String userName = u.getUsername();
+								Intent in = new Intent(MainActivity.this,
+										GameMenuActivity.class);
+								in.putExtra(Utils.COME_FROM, 0);
+								in.putExtra(Utils.USERDATA, userName);
+								loadingLayout.setVisibility(View.INVISIBLE);
+								MainActivity.this.startActivity(in);
+								MainActivity.this.finish();
+						    }
+						    });
+							
 						}
 					});
 		}

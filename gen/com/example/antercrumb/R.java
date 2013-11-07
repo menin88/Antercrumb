@@ -46,33 +46,35 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class drawable {
         public static final int crumb=0x7f020000;
-        public static final int grass=0x7f020001;
-        public static final int grass1=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int sign_in_facebook=0x7f020004;
+        public static final int defaultpp=0x7f020001;
+        public static final int grass=0x7f020002;
+        public static final int grass1=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int sign_in_facebook=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f090014;
-        public static final int btnBackToMainMenu=0x7f090012;
-        public static final int btnLogin=0x7f090005;
-        public static final int btnRegisterAccount=0x7f090006;
-        public static final int btnToProfile=0x7f09000d;
-        public static final int dummy_button=0x7f090002;
-        public static final int etEmailLogin=0x7f090007;
-        public static final int etPassword=0x7f090004;
-        public static final int exit=0x7f090011;
-        public static final int fullscreen_content=0x7f090000;
-        public static final int fullscreen_content_controls=0x7f090001;
-        public static final int icon=0x7f090009;
-        public static final int imageBackground=0x7f09000c;
-        public static final int loadingPanel=0x7f090008;
-        public static final int name=0x7f09000a;
-        public static final int playTheGame=0x7f09000e;
-        public static final int scoreMenu=0x7f09000f;
-        public static final int scorepoint=0x7f09000b;
-        public static final int settings=0x7f090010;
-        public static final int tvErrorMessage=0x7f090003;
-        public static final int txtHeader=0x7f090013;
+        public static final int btnBackToMainMenu=0x7f080014;
+        public static final int btnLogin=0x7f080005;
+        public static final int btnRegisterAccount=0x7f080006;
+        public static final int btnToProfile=0x7f08000d;
+        public static final int defaultProfilePicture=0x7f080012;
+        public static final int dummy_button=0x7f080002;
+        public static final int etEmailLogin=0x7f080007;
+        public static final int etPassword=0x7f080004;
+        public static final int exit=0x7f080011;
+        public static final int fullscreen_content=0x7f080000;
+        public static final int fullscreen_content_controls=0x7f080001;
+        public static final int icon=0x7f080009;
+        public static final int imageBackground=0x7f08000c;
+        public static final int loadingPanel=0x7f080008;
+        public static final int name=0x7f08000a;
+        public static final int playTheGame=0x7f08000e;
+        public static final int scoreMenu=0x7f08000f;
+        public static final int scorepoint=0x7f08000b;
+        public static final int settings=0x7f080010;
+        public static final int tvErrorMessage=0x7f080003;
+        public static final int txtHeader=0x7f080015;
+        public static final int username=0x7f080013;
     }
     public static final class layout {
         public static final int activity_game=0x7f030000;
@@ -83,9 +85,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int profile=0x7f030005;
         public static final int score=0x7f030006;
         public static final int score_view_header=0x7f030007;
-    }
-    public static final class menu {
-        public static final int settings=0x7f080000;
     }
     public static final class string {
         public static final int Back=0x7f060013;
