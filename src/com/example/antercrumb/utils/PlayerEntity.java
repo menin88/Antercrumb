@@ -10,7 +10,7 @@ public class PlayerEntity extends GenericJson{
 	@Key
 	private int imageID;
 	@Key
-	private String email;
+	private String user;
 	public PlayerEntity (){}
 	
 	

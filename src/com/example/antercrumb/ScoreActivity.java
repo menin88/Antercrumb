@@ -49,7 +49,7 @@ public class ScoreActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.score);
+		setContentView(R.layout.score_activity);
 		//start some View set
 		//listView =(ListView)findViewById(R.id.listview);
 		
@@ -183,9 +183,9 @@ public class ScoreActivity extends Activity {
 				
 			}
 			
-			ScoreAdapter adapter = new ScoreAdapter(getApplicationContext(), R.layout.elementscore, players);
+			ScoreAdapter adapter = new ScoreAdapter(getApplicationContext(), R.layout.score_activity_element, players);
 			
-			View header = (View)getLayoutInflater().inflate(R.layout.score_view_header, null);
+			View header = (View)getLayoutInflater().inflate(R.layout.score_activity_header, null);
 			listView.addHeaderView(header);
 			listView.setAdapter(adapter);
 		

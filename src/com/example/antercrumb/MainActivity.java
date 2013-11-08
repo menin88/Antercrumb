@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.main_activity);
 		
 		imageID = R.drawable.defaultpp;
 		
@@ -105,65 +105,7 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	/*
-	 * public void launchFacebookLogin(View view) { final ProgressDialog
-	 * progressDialog = ProgressDialog.show( MainActivity.this,
-	 * "Connecting to Facebook", "Logging in with Facebook - just a moment");
-	 * 
-	 * doFacebookSso(progressDialog);
-	 * 
-	 * }
-	 */
-
-	/**
-	 * Facebook SSO Oauth
-	 */
-	/*
-	 * private void doFacebookSso(final ProgressDialog progressDialog) { try {
-	 * Session.openActiveSession(this, true, new Session.StatusCallback() {
-	 * 
-	 * @Override public void call(Session session, SessionState state, Exception
-	 * exception) { if (exception == null) { if (state.equals(RESULT_CANCELED))
-	 * { Toast.makeText(MainActivity.this, "FB login cancelled",
-	 * Toast.LENGTH_LONG) .show(); } else if (state.isOpened()) { if
-	 * (progressDialog != null && progressDialog.isShowing()) {
-	 * progressDialog.dismiss(); } Toast.makeText(MainActivity.this,
-	 * "Logged in with Facebook.", Toast.LENGTH_LONG).show();
-	 * 
-	 * loginFacebookKinveyUser(progressDialog, session.getAccessToken()); } }
-	 * else { error(progressDialog, exception.getMessage()); } } }); } catch
-	 * (Exception ex) { Log.i("Kinvey - SignIn", ex.getMessage()); } }
-	 * 
-	 * private void loginFacebookKinveyUser(final ProgressDialog progressDialog,
-	 * String accessToken) {
-	 * 
-	 * mKinveyClient.user().loginFacebook(accessToken, new KinveyUserCallback()
-	 * {
-	 * 
-	 * @Override public void onFailure(Throwable e) { CharSequence text =
-	 * "Wrong username or password"; Toast toast =
-	 * Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG);
-	 * toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0); toast.show(); }
-	 * 
-	 * @Override public void onSuccess(User u) { CharSequence text =
-	 * "Logged in."; Toast.makeText(getApplicationContext(), text,
-	 * Toast.LENGTH_LONG).show();
-	 * 
-	 * ArrayList<CharSequence> dataArray = new ArrayList<CharSequence>();
-	 * dataArray.add(mKinveyClient.user().getUsername());
-	 * 
-	 * Intent in = new Intent(MainActivity.this, GameMenuActivity.class);
-	 * in.putCharSequenceArrayListExtra(Utils.USERDATA, dataArray);
-	 * 
-	 * MainActivity.this.startActivity(in); MainActivity.this.finish(); } });
-	 * 
-	 * }
-	 * 
-	 * @Override protected void onActivityResult(int requestCode, int
-	 * resultCode, Intent data) { super.onActivityResult(requestCode,
-	 * resultCode, data); Session.getActiveSession().onActivityResult(this,
-	 * requestCode, resultCode, data); }
-	 */
+	
 	public static boolean isEmailValid(String email) {
 		boolean isValid = false;
 
@@ -208,7 +150,7 @@ public class MainActivity extends Activity {
 		mUserEmail = mEditUserEmail.getText().toString();
 		mPassword = mEditPassword.getText().toString();
 		if (TextUtils.isEmpty(mUserEmail) || TextUtils.isEmpty(mPassword)
-				|| !isEmailValid(mUserEmail)) {
+				 ||!isEmailValid(mUserEmail)) {
 			mErrorMessage
 					.setText("Please enter a valid username and password.");
 		} else {
@@ -283,15 +225,16 @@ public class MainActivity extends Activity {
 							setAllVisible();
 						}
 						public void onSuccess(User u) {
-							int atIndex = findAtPosition(u);
+							int atIndex = findAtPosition(mUserEmail);
 							String strNoDomain = u.getUsername().substring(0, atIndex -1);
-							mKinveyClient.user().put("email", u.getUsername());
-							mKinveyClient.user().put("username", strNoDomain);
+							mKinveyClient.user().put("user", strNoDomain);
 							mKinveyClient.user().put("imageID", imageID);
 							mKinveyClient.user().update(new KinveyUserCallback() {
 						    @Override
 						    public void onFailure(Throwable e) {
 						    	mErrorMessage.setText("Errore nel salvare i dati");
+						    	loadingLayout.setVisibility(View.INVISIBLE);
+								setAllVisible();
 						    }
 						    @Override
 						    public void onSuccess(User u) {
@@ -310,20 +253,21 @@ public class MainActivity extends Activity {
 						    });
 							
 						}
-						private int findAtPosition(User u) {
-							int atIndex=0;
-							boolean found = false;
-							for (; atIndex < u.getUsername().length() && !found; atIndex++){
-								if (u.getUsername().charAt(atIndex) == '@'){
-									found=true;
-								}
-							}
-							return atIndex;
-						}
+						
 					});
 		}
 	}
 
+	private int findAtPosition(String u) {
+		int atIndex=0;
+		boolean found = false;
+		for (; atIndex < u.length() && !found; atIndex++){
+			if (u.charAt(atIndex) == '@'){
+				found=true;
+			}
+		}
+		return atIndex;
+	}
 	@Override
 	public void onResume() {
 		super.onResume();

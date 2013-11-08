@@ -45,14 +45,7 @@
             android:name="com.example.antercrumb.ProfileActivity"
             android:label="@string/button_profile" >
         </activity>
-        <activity
-            android:name="com.example.antercrumb.SettingsActivity"
-            android:label="@string/settings" >
-        </activity>
-        <activity
-            android:name="com.example.antercrumb.SettingsActivity"
-            android:label="@string/profile_settings" >
-        </activity>
+
     </application>
 
 </manifest>

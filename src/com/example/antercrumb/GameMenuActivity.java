@@ -16,7 +16,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 public class GameMenuActivity extends Activity {
 
 	private static final String PREFS_NAME = "MY_PREFERENCES";
@@ -29,23 +28,15 @@ public class GameMenuActivity extends Activity {
 	private TextView scoreBtn;
 	private String dataArray;
 
-	private Button btn;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.mainmenu);
-
-		btn = (Button) findViewById(R.id.btnToProfile);
+		setContentView(R.layout.game_menu_activity);
 
 		// setText();
 
 		mKinveyClient = new Client.Builder(this.getApplicationContext())
 				.build();
-
-		// profileBtn = (TextView) findViewById(R.id.profile); ??
-		logOutButton = (TextView) findViewById(R.id.exit);
-		scoreBtn = (TextView) findViewById(R.id.scoreMenu);
 
 		/*
 		 * if(getIntent().getIntExtra(Utils.COME_FROM, 0) == 0 ){ dataArray =
@@ -62,17 +53,28 @@ public class GameMenuActivity extends Activity {
 
 		switch (v.getId()) {
 
-		case R.id.btnToProfile:
+		case R.id.toProfileBar:
 			Toast.makeText(this, "Profile button pressed", Toast.LENGTH_SHORT)
 					.show();
 
-			Intent profileIntent = new Intent(GameMenuActivity.this,
-					ProfileActivity.class);
-			GameMenuActivity.this.startActivity(profileIntent);
-			// GameMenuActivity.this.finish();
+			GameMenuActivity.this.startActivity(new Intent(
+					GameMenuActivity.this, ProfileActivity.class));
 			break;
-
-
+		/*
+		 * case R.id.imageView1: Toast.makeText(this, "Profile button pressed",
+		 * Toast.LENGTH_SHORT) .show();
+		 * 
+		 * GameMenuActivity.this.startActivity(new Intent(
+		 * GameMenuActivity.this, ProfileActivity.class)); //
+		 * GameMenuActivity.this.finish(); break;
+		 * 
+		 * case R.id.profileText: Toast.makeText(this, "Profile button pressed",
+		 * Toast.LENGTH_SHORT) .show();
+		 * 
+		 * GameMenuActivity.this.startActivity(new Intent(
+		 * GameMenuActivity.this, ProfileActivity.class)); //
+		 * GameMenuActivity.this.finish(); break;
+		 */
 		case R.id.scoreMenu:
 			Toast.makeText(this, "Score button pressed", Toast.LENGTH_SHORT)
 					.show();
@@ -86,29 +88,16 @@ public class GameMenuActivity extends Activity {
 		 * case R.id.graphics: editor.putBoolean("graphics",
 		 * !settingsHolder[3]); break;
 		 */
-
-		case R.id.settings:
-			Toast.makeText(this, "Settings button pressed", Toast.LENGTH_SHORT)
-					.show();
-			Intent settingsIntent = new Intent(GameMenuActivity.this,
-					SettingsActivity.class);
-			GameMenuActivity.this.startActivity(settingsIntent);
-
+		case R.id.playTheGame:
 			break;
 
-		case R.id.exit:
-			String text = "";
-			mKinveyClient.user().logout().execute();
-			if (mKinveyClient.user().isUserLoggedIn()) {
-				text = "Still logged";
-			} else {
-				text = "Not Logged";
-			}
-			Toast.makeText(getBaseContext(), "User State: " + text,
-					Toast.LENGTH_LONG).show();
-			Intent in = new Intent(GameMenuActivity.this, MainActivity.class);
+		case R.id.logout:
 
-			GameMenuActivity.this.startActivity(in);
+			mKinveyClient.user().logout().execute();
+
+			Intent intent = new Intent(GameMenuActivity.this,
+					MainActivity.class);
+			GameMenuActivity.this.startActivity(intent);
 			GameMenuActivity.this.finish();
 			break;
 
@@ -151,10 +140,10 @@ public class GameMenuActivity extends Activity {
 		// TextView profile = (TextView) findViewById(R.id.profile);
 		TextView start = (TextView) findViewById(R.id.playTheGame);
 		TextView score = (TextView) findViewById(R.id.scoreMenu);
-		TextView exit = (TextView) findViewById(R.id.exit);
+
 		// profile.setTypeface(tf);
 		start.setTypeface(tf);
-		exit.setTypeface(tf);
+
 		score.setTypeface(tf);
 	}
 

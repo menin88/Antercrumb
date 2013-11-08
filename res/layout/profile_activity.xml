@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/profileContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/username"
+            style="@style/MenuFont"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="false"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="80dp"
+            android:text="username"
+            android:textColor="@color/black_overlay" />
+
+        <ImageView
+            android:id="@+id/defaultProfilePicture"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="defaultProfilePicture"
+            android:src="@drawable/defaultpp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="180dp"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/edit_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:ems="10"
+            android:hint="@string/edit_username" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_weight="0.25"
+            android:onClick="onClick"
+            android:text="SAVE"
+            android:textSize="50sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
+        style="@style/GenericProgressBackground"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible" >
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="@style/GenericProgressIndicator" />
+    </RelativeLayout>
+
+</RelativeLayout>

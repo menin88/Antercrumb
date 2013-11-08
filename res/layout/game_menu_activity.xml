@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/imageBackground"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:contentDescription="background_image"
+        android:scaleType="fitXY"
+        android:src="@drawable/grass" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/playTheGame"
+            style="@style/MenuFont"
+            android:onClick="onClick"
+            android:text="@string/game_start"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/scoreMenu"
+            style="@style/MenuFont"
+            android:layout_width="match_parent"
+            android:onClick="onClick"
+            android:text="@string/scores" />
+
+        <TextView
+            android:id="@+id/logout"
+            style="@style/MenuFont"
+            android:onClick="onClick"
+            android:text="Logout" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/toProfileBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="onClick" >
+
+        <TextView
+            android:id="@+id/profileText"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="55dp"
+            android:gravity="center"
+            android:text="@string/button_profile"
+            android:textColor="#FFFF00"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaultpp" />
+    </RelativeLayout>
+
+</RelativeLayout>

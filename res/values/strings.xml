@@ -32,6 +32,7 @@
     <string name="change_username">Change Username</string>
     <string name="profile_settings">PROFILE </string>
     <string name="game_settings">GAME </string>
+    <string name="edit_username">change username</string>
     
         
 </resources>
